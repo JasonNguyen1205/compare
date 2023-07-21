@@ -17,7 +17,7 @@ export default function Home() {
     cb(newUrl);
   };
   return (
-    <main className="  w-2/5  items-center justify-between m-auto text-sm ">
+    <main className="  lg:w-2/5 md:w-3/4 sm:w-full    items-center justify-between m-auto text-sm ">
       <div className="  ">
         <div className="grid grid-cols-2 gap-5 my-6   ">
           <div className="col-span-1 flex gap-2 items-center justify-between w-full">
