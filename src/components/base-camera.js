@@ -18,10 +18,11 @@ const BaseCamera = (props) => {
           <Camera
             isImageMirror={true}
             isSilentMode={false}
-            idealResolution = {{width: 1640, height: 1080}}
+            idealResolution = {{width: 1940, height: 1080}}
             isDisplayStartCameraError={true}
             sizeFactor={1}
-            isFullscreen={false}
+            isMaxResolution={{width: 1940, height: 1080}}
+            isFullscreen={true}
             imageType={IMAGE_TYPES.JPG}
             idealFacingMode={FACING_MODES.ENVIRONMENT || FACING_MODES.USER}
             onTakePhoto={(dataUri) => {
