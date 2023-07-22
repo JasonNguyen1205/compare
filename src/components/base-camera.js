@@ -8,8 +8,17 @@ const BaseCamera = (props) => {
   const [visible, setVisible] = useState(true);
 
   function handleTakePhoto(dataUri) {
+   var file = new File([dataUri], props.name);
+    console.log("file",file);
+
+    var newForm =new FormData()
+    newForm.append("file", file)
+
+    fetch(`/api/upload/${props.folder}`,{method:"POST",body:newForm}).then(result=>{
     props.cb(dataUri);
     setVisible(true);
+    }).catch(err=>{console.log(err)})
+
   }
   return (
     <>
