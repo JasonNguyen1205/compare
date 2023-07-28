@@ -1,4 +1,16 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
+body{
+    background-color: #1e293b !important;
+   
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.none{
+    display: none;
+}
+
+.carousel-item{
+    height: auto !important;
+}

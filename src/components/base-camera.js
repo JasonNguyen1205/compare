@@ -23,7 +23,7 @@ const BaseCamera = (props) => {
   return (
     <>
       {!visible && (
-        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2   z-40 ">
+        <div className=" ">
           <Camera
             isImageMirror={true}
             isSilentMode={false}
@@ -47,7 +47,7 @@ const BaseCamera = (props) => {
           setVisible(false);
         }}
       >
-        Camera <Image src={require("../assets/icons/camera.svg")} width={18} />
+        Camera <Image alt="picture9" src={require("../assets/icons/camera.svg")} width={18} />
       </button>
     </>
   );
