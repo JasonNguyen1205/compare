@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server'
-import { writeFile,mkdir,rmdir } from 'fs/promises'
+import { writeFile, mkdir, rmdir } from 'fs/promises'
 import * as fsExtra from "fs-extra";
 
 export async function POST(request, { params }) {
 
   const data = await request.formData()
-  const file= data.get('file') 
+  const file = data.get('file')
 
   if (!file) {
     return NextResponse.json({ success: false })

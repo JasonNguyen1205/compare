@@ -8,16 +8,16 @@ const BaseCamera = (props) => {
   const [visible, setVisible] = useState(true);
 
   function handleTakePhoto(dataUri) {
-   var file = new File([dataUri], props.name);
-    console.log("file",file);
+    let file = new File([dataUri], props.name);
+    console.log("file", file);
 
-    var newForm =new FormData()
+    let newForm = new FormData()
     newForm.append("file", file)
 
-    fetch(`/api/upload/${props.folder}`,{method:"POST",body:newForm}).then(result=>{
-    props.cb(dataUri);
-    setVisible(true);
-    }).catch(err=>{console.log(err)})
+    fetch(`/api/upload/${props.folder}`, { method: "POST", body: newForm }).then(result => {
+      props.cb(dataUri);
+      setVisible(true);
+    }).catch(err => { console.log(err) })
 
   }
   return (
@@ -27,12 +27,12 @@ const BaseCamera = (props) => {
           <Camera
             isImageMirror={true}
             isSilentMode={false}
-            idealResolution = {{width: 1940, height: 1080}}
+            idealResolution={{ width: 1940, height: 1080 }}
             isDisplayStartCameraError={true}
             sizeFactor={1}
-            isMaxResolution={{width: 1940, height: 1080}}
+            isMaxResolution={{ width: 1940, height: 1080 }}
             isFullscreen={true}
-            imageType={IMAGE_TYPES.JPG}
+            fileType={IMAGE_TYPES.JPG}
             idealFacingMode={FACING_MODES.ENVIRONMENT || FACING_MODES.USER}
             onTakePhoto={(dataUri) => {
               handleTakePhoto(dataUri);
